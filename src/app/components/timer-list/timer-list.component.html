@@ -1,6 +1,6 @@
 <app-timer *ngFor="let timer of timerList" [timer]="timer">
 </app-timer>
 
-<button mat-fab class="fab">
+<button mat-fab class="fab" (click)="openDialog()">
     <mat-icon>alarm_add</mat-icon>
 </button>

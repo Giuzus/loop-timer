@@ -9,8 +9,9 @@ export class TimerModel {
     private paused: boolean = true;
 
     public looped = new EventEmitter<Object>();
-
-    constructor(public id: number, public name: string, public time: moment.Moment) {
+    
+    public id: number;
+    constructor(public name: string, public time: moment.Moment) {
         this.initalTime = time.clone();
     }
 

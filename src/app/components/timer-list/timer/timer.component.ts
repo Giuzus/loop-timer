@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { TimerModel } from '../../../models/timer.model';
+import { MatDialog } from '@angular/material';
+import { RemoveTimerComponent } from '../remove-timer/remove-timer.component';
 
 @Component({
   selector: 'app-timer',
@@ -8,7 +10,7 @@ import { TimerModel } from '../../../models/timer.model';
 })
 export class TimerComponent implements OnInit {
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   @Input()
   private timer: TimerModel;
@@ -29,5 +31,11 @@ export class TimerComponent implements OnInit {
 
   onPause() {
     this.timer.pause();
+  }
+
+  onDelete() {
+    const dialogRef = this.dialog.open(RemoveTimerComponent, {
+      width: '250px'
+    });
   }
 }
