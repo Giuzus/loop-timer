@@ -1,3 +1,6 @@
-<mat-list>
-  <app-timer *ngFor="let timer of timerList" [timer]="timer"></app-timer>
-</mat-list>
+<app-timer *ngFor="let timer of timerList" [timer]="timer">
+</app-timer>
+
+<button mat-fab class="fab">
+    <mat-icon>alarm_add</mat-icon>
+</button>

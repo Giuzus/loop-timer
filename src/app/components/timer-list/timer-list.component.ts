@@ -23,10 +23,6 @@ export class TimerListComponent implements OnInit {
       new TimerModel(3, "Teste 3", moment('00:30', 'mm:ss')),
       new TimerModel(4, "Teste 4", moment('00:40', 'mm:ss'))
     ]
-
-    this.timerList.forEach(x => {
-      x.start();
-    });
   }
 
 }
