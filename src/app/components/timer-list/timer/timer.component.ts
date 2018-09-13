@@ -18,7 +18,7 @@ export class TimerComponent implements OnInit {
   ngOnInit() {
     this.timer.looped.subscribe(x => {
       var audio = new Audio();
-      audio.src = "/src/app/assets/looped.ogg";
+      audio.src = "/src/assets/looped.ogg";
       audio.load();
       audio.play();
     });
