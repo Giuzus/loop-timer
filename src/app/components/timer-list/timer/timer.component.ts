@@ -13,11 +13,14 @@ export class TimerComponent implements OnInit {
   constructor(public dialog: MatDialog) { }
 
   @Input()
-  private timer: TimerModel;
+  public timer: TimerModel;
 
   ngOnInit() {
     this.timer.looped.subscribe(x => {
-      console.log(this.timer.id + " looped.");
+      var audio = new Audio();
+      audio.src = "/src/app/assets/looped.ogg";
+      audio.load();
+      audio.play();
     });
   }
 

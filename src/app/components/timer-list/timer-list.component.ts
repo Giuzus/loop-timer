@@ -16,7 +16,7 @@ export class TimerListComponent implements OnInit {
 
   constructor(private timerService: TimerService, public dialog: MatDialog) { }
 
-  private timerList: TimerModel[];
+  public timerList: TimerModel[];
   ngOnInit() {
 
     this.timerService.timerListUpdated.subscribe(x => {

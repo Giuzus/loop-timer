@@ -5,13 +5,13 @@
         <h2>{{timer.time.format("HH:mm:ss") }}</h2>
       </mat-grid-tile>
       <mat-grid-tile [colspan]="2" [rowspan]="2">
-        <button *ngIf="timer.paused" mat-icon-button color="primary">
+        <button *ngIf="timer.isPaused" mat-icon-button color="primary" (click)="onStart()">
           <mat-icon>play_arrow</mat-icon>
         </button>
-        <button *ngIf="!timer.paused" mat-icon-button color="primary">
+        <button *ngIf="!timer.isPaused" mat-icon-button color="primary" (click)="onPause()">
           <mat-icon>pause</mat-icon>
         </button>
-        <button mat-icon-button color="warn">
+        <button mat-icon-button color="warn" (click)="onStop()">
           <mat-icon>stop</mat-icon>
         </button>
       </mat-grid-tile>

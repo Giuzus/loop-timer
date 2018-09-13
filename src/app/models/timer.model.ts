@@ -7,9 +7,15 @@ export class TimerModel {
     private initalTime: moment.Moment;
     private interval = null;
     private paused: boolean = true;
+    private hasLooped = false;
+
+    get isPaused(): boolean {
+        return this.paused;
+    }
 
     public looped = new EventEmitter<Object>();
-    
+
+
     public id: number;
     constructor(public name: string, public time: moment.Moment) {
         this.initalTime = time.clone();
@@ -21,6 +27,7 @@ export class TimerModel {
             this.interval = this.initCountdown();
         }
         this.paused = false;
+        this.hasLooped = false;
     }
 
     public pause() {
@@ -29,18 +36,25 @@ export class TimerModel {
 
     public stop() {
         clearInterval(this.interval);
-        this.time = this.initalTime;
+        this.time = this.initalTime.clone();
+        this.paused = true;
         this.interval = null;
+        this.hasLooped = false;
     }
 
     private initCountdown() {
         return setInterval(x => {
             if (!this.paused) {
                 this.time.add(-1, 'second');
-                //console.log(this.time.hours() + ":" + this.time.minutes() + ":" + this.time.seconds())
-                if (this.time.hours() == 0 && this.time.minutes() == 0 && this.time.seconds() == 0) {
-                    this.time = this.initalTime.clone();
+
+                if (this.hasLooped) {
+                    this.hasLooped = false;
                     this.looped.emit({});
+                    this.time = this.initalTime.clone();
+                }
+
+                if (this.time.hours() == 0 && this.time.minutes() == 0 && this.time.seconds() == 0) {
+                    this.hasLooped = true;
                 }
             }
         },
