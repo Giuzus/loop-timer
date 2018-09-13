@@ -10,6 +10,7 @@ import { TimerComponent } from './components/timer-list/timer/timer.component';
 import { AddTimerComponent } from './components/timer-list/add-timer/add-timer.component';
 import { TimerService } from './services/timer.service';
 import { RemoveTimerComponent } from './components/timer-list/remove-timer/remove-timer.component';
+import {NgxMaskModule} from 'ngx-mask'
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { RemoveTimerComponent } from './components/timer-list/remove-timer/remov
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
+    NgxMaskModule.forRoot(),
     MatCardModule,
     MatButtonModule,
     MatIconModule,
@@ -30,7 +32,7 @@ import { RemoveTimerComponent } from './components/timer-list/remove-timer/remov
     MatFormFieldModule,
     MatInputModule,
     MatDialogModule,
-    MatMenuModule
+    MatMenuModule,
   ],
   entryComponents: [
     AddTimerComponent,

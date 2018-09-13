@@ -12,16 +12,25 @@ import { TimerService } from '../../../services/timer.service';
 })
 export class AddTimerComponent {
 
+  model: {
+    name: string,
+    time: string
+  }
+
   constructor(
     public dialogRef: MatDialogRef<AddTimerComponent>,
     public timerService: TimerService
-  ) { }
+  ) {
+    this.model = {
+      name: "",
+      time: ""
+    }
+  }
 
-  name: string;
-  time: string;
-
-  onConfirm(): void {
-    var timer = new TimerModel(this.name, moment(this.time, "hh:mm:ss"))
+  onSubmit(): void {
+    var timer = new TimerModel(this.model.name, moment(this.model.time, "hh:mm:ss"))
     this.timerService.addTimer(timer);
+
+    this.dialogRef.close();
   }
 }
