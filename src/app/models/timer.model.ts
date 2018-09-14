@@ -18,14 +18,16 @@ export class TimerModel {
     public looped = new EventEmitter<Object>();
 
 
-    public id: number;
+    // public id: number;
     constructor(
         public name: string,
         public time: moment.Moment,
-        public showsNotification: boolean) {
+        public showsNotification: boolean,
+        public id?: number) {
 
         this.initalTime = time.clone();
     }
+    
 
 
     public start() {

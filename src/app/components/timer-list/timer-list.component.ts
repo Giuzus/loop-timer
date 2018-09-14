@@ -6,6 +6,7 @@ import * as moment from 'moment';
 import { MatDialog } from '@angular/material';
 import { AddTimerComponent } from './add-timer/add-timer.component';
 import { PushNotificationsService } from '../../services/push-notification.service';
+import { timer } from 'rxjs';
 
 @Component({
   selector: 'app-timer-list',
@@ -25,7 +26,10 @@ export class TimerListComponent implements OnInit {
 
     this.pushNotificationService.requestPermission();
 
+    this.timerList = this.timerService.getTimers();
+
     this.timerService.timerListUpdated.subscribe(x => {
+      debugger;
       this.timerList = x;
     });
   }
