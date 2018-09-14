@@ -21,10 +21,14 @@ export class TimerService {
   }
 
   public removeTimer(id: number): void {
-    this.timerList = this.timerList.filter(x => {
-      x.id != id;
+    
+    var toDelete = this.timerList.filter(x => x.id == id);
+
+    toDelete.forEach(x => {
+      x.stop();
     });
 
+    this.timerList = this.timerList.filter(x => x.id != id);
     this.timerListUpdated.emit(this.getTimers());
   }
 

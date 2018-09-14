@@ -33,7 +33,7 @@ export class TimerModel {
             this.interval = this.initCountdown();
         }
         this.paused = false;
-        this.hasLooped = false;
+        ///this.hasLooped = false;
     }
 
     public pause() {

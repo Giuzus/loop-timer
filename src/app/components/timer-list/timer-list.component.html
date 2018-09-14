@@ -1,6 +1,29 @@
-<app-timer *ngFor="let timer of timerList" [timer]="timer">
-</app-timer>
+<mat-toolbar color="primary" class="toolbar mat-elevation-z6">
+    <span>Loop timer</span>
 
+    <span class="fill-remaining-space"></span>
+
+    <span>
+        <button class="menu-button" mat-icon-button [matMenuTriggerFor]="menu">
+            <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="onStartAll()">
+                <span>Start all</span>
+            </button>
+            <button mat-menu-item (click)="onPauseAll()">
+                <span>Pause all</span>
+            </button>
+            <button mat-menu-item (click)="onStopAll()">
+                <span>Stop all</span>
+            </button>
+        </mat-menu>
+    </span>
+</mat-toolbar>
+<div class="timers-container">
+    <app-timer *ngFor="let timer of timerList" [timer]="timer">
+    </app-timer>
+</div>
 <button mat-fab class="fab" (click)="openDialog()">
     <mat-icon>alarm_add</mat-icon>
 </button>

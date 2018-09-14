@@ -1,4 +1,4 @@
-<mat-card class="card mat-elevation-z5">
+<mat-card class="card mat-elevation-z4">
   <mat-card-content>
     <mat-grid-list cols="4" rowHeight="35px">
       <mat-grid-tile [colspan]="2">
@@ -20,13 +20,13 @@
       </mat-grid-tile>
     </mat-grid-list>
 
-    <button class="menu-button" mat-icon-button [matMenuTriggerFor]="menu">
-      <mat-icon>more_vert</mat-icon>
-    </button>
-    <mat-menu #menu="matMenu">
-      <button mat-menu-item (click)="onDelete()">
-        <span>Delete</span>
-      </button>
-    </mat-menu>
   </mat-card-content>
+  <button class="menu-button" mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="onDelete()">
+      <span>Delete</span>
+    </button>
+  </mat-menu>
 </mat-card>

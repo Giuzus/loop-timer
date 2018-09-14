@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
-import { MatCardModule, MatButtonModule, MatIconModule, MatGridListModule, MatFormFieldModule, MatDialogModule, MatInputModule, MatMenuModule, MatCheckboxModule } from '@angular/material';
+import { MatCardModule, MatButtonModule, MatIconModule, MatGridListModule, MatFormFieldModule, MatDialogModule, MatInputModule, MatMenuModule, MatCheckboxModule, MatToolbarModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { TimerListComponent } from './components/timer-list/timer-list.component';
@@ -34,6 +34,7 @@ import { PushNotificationsService } from './services/push-notification.service';
     MatInputModule,
     MatDialogModule,
     MatMenuModule,
+    MatToolbarModule,
     MatCheckboxModule
   ],
   entryComponents: [

@@ -1,5 +1,22 @@
-.fab{
+.fab {
     position: fixed;
     right: 20px;
     bottom: 20px;
+}
+
+
+.fill-remaining-space {
+    flex: 1 1 auto;
+}
+
+.toolbar {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 100;
+    padding-right: 0px;
+}
+
+.timers-container {
+    margin-top: 80px;
 }

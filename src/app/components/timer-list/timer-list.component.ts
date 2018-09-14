@@ -35,4 +35,22 @@ export class TimerListComponent implements OnInit {
       width: '250px'
     });
   }
+
+  onStartAll() {
+    this.timerList.forEach(timer => {
+      timer.start();
+    });
+  }
+
+  onPauseAll() {
+    this.timerList.forEach(timer => {
+      timer.pause();
+    });
+  }
+
+  onStopAll() {
+    this.timerList.forEach(timer => {
+      timer.stop();
+    });
+  }
 }

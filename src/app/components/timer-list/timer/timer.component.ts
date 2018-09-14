@@ -37,7 +37,8 @@ export class TimerComponent implements OnInit {
 
   onDelete() {
     const dialogRef = this.dialog.open(RemoveTimerComponent, {
-      width: '250px'
+      width: '250px',
+      data: this.timer.id
     });
   }
 }
