@@ -5,6 +5,7 @@ import { TimerModel } from '../../models/timer.model';
 import * as moment from 'moment';
 import { MatDialog } from '@angular/material';
 import { AddTimerComponent } from './add-timer/add-timer.component';
+import { PushNotificationsService } from '../../services/push-notification.service';
 
 @Component({
   selector: 'app-timer-list',
@@ -14,10 +15,15 @@ import { AddTimerComponent } from './add-timer/add-timer.component';
 })
 export class TimerListComponent implements OnInit {
 
-  constructor(private timerService: TimerService, public dialog: MatDialog) { }
+  constructor(
+    private timerService: TimerService,
+    public pushNotificationService: PushNotificationsService,
+    public dialog: MatDialog) { }
 
   public timerList: TimerModel[];
   ngOnInit() {
+
+    this.pushNotificationService.requestPermission();
 
     this.timerService.timerListUpdated.subscribe(x => {
       this.timerList = x;

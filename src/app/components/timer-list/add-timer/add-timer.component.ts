@@ -15,6 +15,7 @@ export class AddTimerComponent {
   model: {
     name: string,
     time: string
+    showsNotification: boolean
   }
 
   constructor(
@@ -23,12 +24,13 @@ export class AddTimerComponent {
   ) {
     this.model = {
       name: "",
-      time: ""
+      time: "",
+      showsNotification: false
     }
   }
 
   onSubmit(): void {
-    var timer = new TimerModel(this.model.name, moment(this.model.time, "hh:mm:ss"))
+    var timer = new TimerModel(this.model.name, moment(this.model.time, "hh:mm:ss"), this.model.showsNotification)
     this.timerService.addTimer(timer);
 
     this.dialogRef.close();

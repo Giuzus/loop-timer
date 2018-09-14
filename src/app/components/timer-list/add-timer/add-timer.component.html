@@ -1,33 +1,19 @@
 <form #timerForm="ngForm" (ngSubmit)="onSubmit()">
   <h2 mat-dialog-title>New Timer</h2>
-  <mat-dialog-content>
-    <div class="example-container">
+  
       <mat-form-field>
-        <input 
-              matInput 
-              id="name" 
-              name="name" 
-              required 
-              [(ngModel)]="model.name" 
-              autocomplete="off" 
-              placeholder="Name">
+        <input matInput id="name" name="name" required [(ngModel)]="model.name" autocomplete="off" placeholder="Name">
       </mat-form-field>
       <mat-form-field>
         <mat-label>Time</mat-label>
-        <input 
-              matInput 
-              id="time" 
-              name="time" 
-              required 
-              minlength="8" 
-              [dropSpecialCharacters]="false" 
-              [(ngModel)]="model.time"
-              #time placeholder="00:00:00" 
-              mask='00:00:00' 
-              autocomplete="off">
+        <input matInput id="time" name="time" required minlength="8" [dropSpecialCharacters]="false" [(ngModel)]="model.time"
+          #time placeholder="00:00:00" mask='00:00:00' autocomplete="off">
       </mat-form-field>
-    </div>
-  </mat-dialog-content>
+      <mat-checkbox id="shows-notification" name="showsNotification" [(ngModel)]="model.showsNotification">
+        Shows notification?
+      </mat-checkbox>
+    
+  
   <mat-dialog-actions>
     <button mat-button color="warn" mat-dialog-close>Cancel</button>
     <button type="submit" mat-button color="primary" [disabled]="!timerForm.form.valid">Confirm</button>

@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { TimerModel } from '../../../models/timer.model';
 import { MatDialog } from '@angular/material';
 import { RemoveTimerComponent } from '../remove-timer/remove-timer.component';
+import { PushNotificationsService, PushNotificationOptions } from '../../../services/push-notification.service';
 
 @Component({
   selector: 'app-timer',
@@ -10,17 +11,15 @@ import { RemoveTimerComponent } from '../remove-timer/remove-timer.component';
 })
 export class TimerComponent implements OnInit {
 
-  constructor(public dialog: MatDialog) { }
+  constructor(
+    public dialog: MatDialog,
+    public pushNotificationService: PushNotificationsService) { }
 
   @Input()
   public timer: TimerModel;
 
   ngOnInit() {
     this.timer.looped.subscribe(x => {
-      var audio = new Audio();
-      audio.src = "assets/looped.ogg";
-      audio.load();
-      audio.play();
     });
   }
 
