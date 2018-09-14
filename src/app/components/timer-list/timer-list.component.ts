@@ -29,7 +29,7 @@ export class TimerListComponent implements OnInit {
     this.timerList = this.timerService.getTimers();
 
     this.timerService.timerListUpdated.subscribe(x => {
-      debugger;
+
       this.timerList = x;
     });
   }

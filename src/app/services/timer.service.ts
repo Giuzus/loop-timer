@@ -47,13 +47,26 @@ export class TimerService {
   }
 
   private updateLocalStorageTimers(): void {
-    var timersJson = JSON.stringify(this.getTimers());
+    var timers = this.getTimers();
+
+    var toJson = [];
+    timers.forEach(x => {
+      toJson.push({
+        name: x.name,
+        time: x.time,
+        showsNotification: x.showsNotification,
+        id: x.id
+      })
+    });
+
+    var timersJson = JSON.stringify(toJson);
+
     localStorage.setItem('timers', timersJson);
   }
 
   private getLocalStorageTimers(): TimerModel[] {
     var stored = JSON.parse(localStorage.getItem('timers'));
-    
+
     var ret = [];
     if (stored) {
       stored.forEach(x => {
