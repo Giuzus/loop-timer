@@ -23,6 +23,9 @@ export class TimerListComponent implements OnInit {
 
   public timerList: TimerModel[];
   ngOnInit() {
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/service-worker.js');
+    }
 
     this.pushNotificationService.requestPermission();
 
@@ -32,6 +35,8 @@ export class TimerListComponent implements OnInit {
 
       this.timerList = x;
     });
+
+
   }
 
   openDialog(): void {

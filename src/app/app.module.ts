@@ -12,6 +12,8 @@ import { TimerService } from './services/timer.service';
 import { RemoveTimerComponent } from './components/timer-list/remove-timer/remove-timer.component';
 import { NgxMaskModule } from 'ngx-mask'
 import { PushNotificationsService } from './services/push-notification.service';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,8 @@ import { PushNotificationsService } from './services/push-notification.service';
     MatDialogModule,
     MatMenuModule,
     MatToolbarModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   entryComponents: [
     AddTimerComponent,
