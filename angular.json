@@ -22,14 +22,13 @@
               "src/favicon.ico",
               "src/assets",
               "src/manifest.json",
-              "src/service-worker.js"
+              "src/service-worker.js",
+              "src/manifest.json"
             ],
             "styles": [
               "src/styles.css"
             ],
-            "scripts": [
-              
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -84,7 +83,8 @@
               "src/favicon.ico",
               "src/assets",
               "src/manifest.json",
-              "src/sw.js"
+              "src/sw.js",
+              "src/manifest.json"
             ]
           }
         },
