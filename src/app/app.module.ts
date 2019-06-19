@@ -2,16 +2,23 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
-import { MatCardModule, MatButtonModule, MatIconModule, MatGridListModule, MatFormFieldModule, MatDialogModule, MatInputModule, MatMenuModule, MatCheckboxModule, MatToolbarModule } from '@angular/material';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { AppComponent } from './app.component';
 import { TimerListComponent } from './components/timer-list/timer-list.component';
 import { TimerComponent } from './components/timer-list/timer/timer.component';
 import { AddTimerComponent } from './components/timer-list/add-timer/add-timer.component';
 import { TimerService } from './services/timer.service';
-import { RemoveTimerComponent } from './components/timer-list/remove-timer/remove-timer.component';
 import { NgxMaskModule } from 'ngx-mask'
-import { PushNotificationsService } from './services/push-notification.service';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 
@@ -20,8 +27,7 @@ import { environment } from '../environments/environment';
     AppComponent,
     TimerListComponent,
     TimerComponent,
-    AddTimerComponent,
-    RemoveTimerComponent
+    AddTimerComponent
   ],
   imports: [
     BrowserModule,
@@ -41,10 +47,9 @@ import { environment } from '../environments/environment';
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   entryComponents: [
-    AddTimerComponent,
-    RemoveTimerComponent
+    AddTimerComponent
   ],
-  providers: [TimerService, PushNotificationsService],
+  providers: [TimerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

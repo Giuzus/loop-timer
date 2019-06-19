@@ -1,8 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { TimerModel } from '../../../models/timer.model';
-import { MatDialog } from '@angular/material';
-import { RemoveTimerComponent } from '../remove-timer/remove-timer.component';
-import { PushNotificationsService, PushNotificationOptions } from '../../../services/push-notification.service';
+import { MatDialog } from '@angular/material/dialog';
+import { TimerService } from 'src/app/services/timer.service';
 
 @Component({
   selector: 'app-timer',
@@ -11,9 +10,8 @@ import { PushNotificationsService, PushNotificationOptions } from '../../../serv
 })
 export class TimerComponent implements OnInit {
 
-  constructor(
-    public dialog: MatDialog,
-    public pushNotificationService: PushNotificationsService) { }
+  constructor(public dialog: MatDialog,
+    public timerService: TimerService) { }
 
   @Input()
   public timer: TimerModel;
@@ -36,9 +34,6 @@ export class TimerComponent implements OnInit {
   }
 
   onDelete() {
-    const dialogRef = this.dialog.open(RemoveTimerComponent, {
-      width: '250px',
-      data: this.timer.id
-    });
+    this.timerService.removeTimer(this.timer.id);
   }
 }

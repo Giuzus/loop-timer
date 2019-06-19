@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MatDialogRef } from '@angular/material';
+import { MatDialogRef } from '@angular/material/dialog';
 import { TimerModel } from '../../../models/timer.model';
 import * as moment from 'moment';
 import { TimerService } from '../../../services/timer.service';
@@ -15,7 +15,6 @@ export class AddTimerComponent {
   model: {
     name: string,
     time: string
-    showsNotification: boolean
   }
 
   constructor(
@@ -24,13 +23,12 @@ export class AddTimerComponent {
   ) {
     this.model = {
       name: "",
-      time: "",
-      showsNotification: false
+      time: ""
     }
   }
 
   onSubmit(): void {
-    var timer = new TimerModel(this.model.name, moment(this.model.time, "hh:mm:ss"), this.model.showsNotification)
+    var timer = new TimerModel(this.model.name, moment(this.model.time, "mm:ss"))
     this.timerService.addTimer(timer);
 
     this.dialogRef.close();

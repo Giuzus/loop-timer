@@ -1,15 +1,14 @@
 import * as moment from 'moment';
 import { EventEmitter } from '@angular/core';
 
-import { PushNotificationsService } from '../services/push-notification.service';
-
 export class TimerModel {
 
     private initalTime: moment.Moment;
     private interval = null;
     private paused: boolean = true;
     private hasLooped = false;
-    private pushNotificationService: PushNotificationsService = new PushNotificationsService();
+    
+    private volume = 0.3;
 
     get isPaused(): boolean {
         return this.paused;
@@ -22,7 +21,6 @@ export class TimerModel {
     constructor(
         public name: string,
         public time: moment.Moment,
-        public showsNotification: boolean,
         public id?: number) {
 
         this.initalTime = time.clone();
@@ -74,12 +72,9 @@ export class TimerModel {
         this.looped.emit({});
 
         var audio = new Audio();
+        audio.volume = this.volume;
         audio.src = "assets/looped.ogg";
         audio.load();
         audio.play();
-
-        if (this.showsNotification) {
-            this.pushNotificationService.create(this.name, { body: "Timer looped", silent: true });
-        }
     }
 }

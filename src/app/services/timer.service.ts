@@ -54,7 +54,6 @@ export class TimerService {
       toJson.push({
         name: x.name,
         time: x.time,
-        showsNotification: x.showsNotification,
         id: x.id
       })
     });
@@ -70,7 +69,7 @@ export class TimerService {
     var ret = [];
     if (stored) {
       stored.forEach(x => {
-        ret.push(new TimerModel(x.name, moment(x.time), x.showsNotification, x.id));
+        ret.push(new TimerModel(x.name, moment(x.time), x.id));
       });
     }
 

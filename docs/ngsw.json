@@ -1,5 +1,6 @@
 {
   "configVersion": 1,
+  "timestamp": 1560965553075,
   "index": "https://giuzus.github.io/loop-timer/index.html",
   "assetGroups": [
     {
@@ -9,10 +10,11 @@
       "urls": [
         "https://giuzus.github.io/loop-timer/favicon.ico",
         "https://giuzus.github.io/loop-timer/index.html",
-        "https://giuzus.github.io/loop-timer/main.0db7e378a37b3b1463f6.js",
-        "https://giuzus.github.io/loop-timer/polyfills.f6ae3e8b63939c618130.js",
-        "https://giuzus.github.io/loop-timer/runtime.ec2944dd8b20ec099bf3.js",
-        "https://giuzus.github.io/loop-timer/styles.74150230aaeb34a659b4.css"
+        "https://giuzus.github.io/loop-timer/main.4a4022c362da61c61fd2.js",
+        "https://giuzus.github.io/loop-timer/polyfills-es5.613d1909ec381c0aefb7.js",
+        "https://giuzus.github.io/loop-timer/polyfills.1ac0c851e3b99934b6ea.js",
+        "https://giuzus.github.io/loop-timer/runtime.741402d1d47331ce975c.js",
+        "https://giuzus.github.io/loop-timer/styles.23d49c63f5a57a803cb7.css"
       ],
       "patterns": []
     },
@@ -46,11 +48,12 @@
     "https://giuzus.github.io/loop-timer/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
     "https://giuzus.github.io/loop-timer/assets/looped.ogg": "7010e8b1e084dfe6e52ff56c41caf8638bfd0d94",
     "https://giuzus.github.io/loop-timer/favicon.ico": "84161b857f5c547e3699ddfbffc6d8d737542e01",
-    "https://giuzus.github.io/loop-timer/index.html": "0f1c2ffea4b508e09135c217b9cc5c0161887248",
-    "https://giuzus.github.io/loop-timer/main.0db7e378a37b3b1463f6.js": "2cd2fe60af6299d0bb670818a074a9f5adb6bbaf",
-    "https://giuzus.github.io/loop-timer/polyfills.f6ae3e8b63939c618130.js": "ef2035f0504b4f77eac510c33595c81a5d09e33f",
-    "https://giuzus.github.io/loop-timer/runtime.ec2944dd8b20ec099bf3.js": "b62956c2192bfe5516d6374e753773901ed50ec5",
-    "https://giuzus.github.io/loop-timer/styles.74150230aaeb34a659b4.css": "a34b9093d87705b0ccbc3b4d02f6bc74fe229cdb"
+    "https://giuzus.github.io/loop-timer/index.html": "b39248a18a59355d8282bfdb22ed2f18f0868f68",
+    "https://giuzus.github.io/loop-timer/main.4a4022c362da61c61fd2.js": "621248bcb6382fd103d48a810cc3d6ead7fdb3af",
+    "https://giuzus.github.io/loop-timer/polyfills-es5.613d1909ec381c0aefb7.js": "e3aac0d6ebd3f9f1286da2a0bbb8631c4642986c",
+    "https://giuzus.github.io/loop-timer/polyfills.1ac0c851e3b99934b6ea.js": "0c01d3168432e95eebc068f3928d5109c838133a",
+    "https://giuzus.github.io/loop-timer/runtime.741402d1d47331ce975c.js": "b62956c2192bfe5516d6374e753773901ed50ec5",
+    "https://giuzus.github.io/loop-timer/styles.23d49c63f5a57a803cb7.css": "d6897d82eb18cf4a05219b1a11a8f38388aaa078"
   },
   "navigationUrls": [
     {
